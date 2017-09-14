@@ -1,0 +1,19 @@
+#!/bin/bash
+
+RED="\033[1;31m"
+GREEN="\033[1;32m"
+NOCOLOR="\033[0m"
+
+echo -e "${RED}Actualizando repositorios${NOCOLOR}"
+sudo apt update
+echo -e "${GREEN}Repositorios actualizados!${NOCOLOR}"
+echo -e "${RED}Actualizando aplicaciones${NOCOLOR}"
+sudo apt upgrade
+echo -e "${GREEN}Aplicaciones actualizadas!${NOCOLOR}"
+echo -e "${RED}Limpiando${NOCOLOR}"
+sudo apt autoremove
+if [ -f /var/run/reboot-required ]; then
+  echo -e "${RED}reboot required${NOCOLOR}"
+else
+  echo -e "${GREEN}Sistema actualisado!${NOCOLOR}"
+fi
