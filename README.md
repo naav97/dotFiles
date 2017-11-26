@@ -1,9 +1,8 @@
-# Upgrade Ubuntu v0.3
+# Upgrade Ubuntu v0.5
 ===================
 
 This is a tool for upgrading your ubuntu system.
 
-# 1) make it runable
-	chmod +x upgrade
-# 2)run it :)
 	**RUN IT AS ROOT**
+
+Example: sudo ./upgrade
