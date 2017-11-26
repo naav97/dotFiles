@@ -1,0 +1,5 @@
+#!/bin/bash
+
+del="`dpkg -l | grep ^rc | cut -d" " -f 3`"
+
+sudo apt purge $del
