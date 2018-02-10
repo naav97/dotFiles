@@ -8,13 +8,15 @@ echo -e "${RED}updating repositories${NOCOLOR}"
 sudo apt update
 echo -e "${GREEN}repositories up to date${NOCOLOR}"
 echo -e "${RED}upgrading system${NOCOLOR}"
-sudo apt upgrade
+sudo apt upgrade -y
 echo -e "${GREEN}system upgraded successfuly!${NOCOLOR}"
 echo -e "${RED}removing unnecessary software${NOCOLOR}"
-sudo apt autoremove
+sudo apt autoremove -y
 echo -e "${GREEN}unnecessary software removed${NOCOLOR}"
 if [ -f /var/run/reboot-required ]; then
+  notify-send "System updated!"
   echo -e "${RED}reboot required${NOCOLOR}"
 else
+  notify-send "System updated!"
   echo -e "${GREEN}system updated, no reboot required${NOCOLOR}"
 fi
