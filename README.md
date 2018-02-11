@@ -1,8 +1,4 @@
-# Upgrade Ubuntu v0.5
+# Upgrade Ubuntu v0.7
 ===================
 
 This is a tool for upgrading your ubuntu system.
-
-	**RUN IT AS ROOT**
-
-Example: sudo ./upgrade
