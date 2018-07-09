@@ -1,0 +1,11 @@
+#!/bin/bash
+RED="\033[1;31m"
+GREEN="\033[1;32m"
+NOCOLOR="\033[0m"
+
+del="`dpkg -l | grep ^rc | cut -d" " -f 3`"
+if [ -z $del ]; then
+	echo -e "${GREEN}Nothing to purge${NOCOLOR}"
+else
+	sudo apt purge $del
+fi
