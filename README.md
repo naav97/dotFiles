@@ -1,4 +1,4 @@
-# Upgrade Ubuntu v0.7
+# Linux Utilities v0.9
 ===================
 
-This is a tool for upgrading your ubuntu system.
+This is a series of tools for upgrading, purging, and install apps in Linux.
