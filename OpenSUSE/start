@@ -1,7 +1,8 @@
 #!/bin/bash
 
 sudo zypper refresh
-sudo zypper install flatpak chromium Terminator cmus youtube-dl rtorrent vlc htop qalculate
+sudo zypper up
+sudo zypper install flatpak chromium terminator cmus youtube-dl rtorrent vlc htop qalculate
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 flatpak install flathub com.valvesoftware.Steam
 flatpak install flathub org.musicbrainz.Picard
