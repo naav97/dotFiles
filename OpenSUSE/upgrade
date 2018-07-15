@@ -1,0 +1,5 @@
+#!/bin/bash
+
+sudo zypper refresh
+sudo zupper up
+flatpak update
