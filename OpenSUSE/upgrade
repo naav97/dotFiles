@@ -1,5 +1,14 @@
 #!/bin/bash
 
+RED="\033[1;31m"
+GREEN="\033[1;32m"
+NOCOLOR="\033[0m"
+
+echo -e "${RED}refreshing repositories${NOCOLOR}"
 sudo zypper refresh
-sudo zupper up
+echo -e "${RED}upgrading system${NOCOLOR}"
+sudo zypper up -y
+echo -e "${RED}updating flatpak apps${NOCOLOR}"
 flatpak update
+echo -e "${GREEN}system updated${NOCOLOR}"
+notify-send "System updated!"
