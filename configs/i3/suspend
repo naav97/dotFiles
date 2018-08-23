@@ -1,4 +1,4 @@
 #!/bin/bash
 
-i3lock --color #252525
+i3lock -c 252525
 systemctl suspend 
