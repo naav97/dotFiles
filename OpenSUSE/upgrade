@@ -9,6 +9,6 @@ sudo zypper refresh
 echo -e "${RED}upgrading system${NOCOLOR}"
 sudo zypper up -y
 echo -e "${RED}updating flatpak apps${NOCOLOR}"
-flatpak update
+sudo flatpak update
 echo -e "${GREEN}system updated${NOCOLOR}"
 notify-send "System updated!"
