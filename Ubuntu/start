@@ -3,7 +3,7 @@
 sudo add-apt-repository ppa:alexlarsson/flatpak
 sudo apt update
 sudo apt upgrade
-sudo apt install flatpak chromium-browser terminator cmus youtube-dl rtorrent vlc htop qalc arc-theme
+sudo apt install flatpak chromium-browser xfce4-terminal cmus youtube-dl rtorrent vlc htop qalc arc-theme needrestart
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 flatpak install flathub com.valvesoftware.Steam
 flatpak install flathub org.musicbrainz.Picard
