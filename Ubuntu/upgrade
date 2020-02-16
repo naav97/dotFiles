@@ -12,14 +12,14 @@ echo -e "${RED}removing unnecessary software${NOCOLOR}"
 sudo apt autoremove -y
 echo -e "${RED}Updating flatpak apps${NOCOLOR}"
 flatpak update
-echo -e "${RED}removing unnecessary flatpak apps${NOCOLOR}"
-flatpak uninstall --unused
+#echo -e "${RED}removing unnecessary flatpak apps${NOCOLOR}"
+#flatpak uninstall --unused
 echo -e "${RED}Updating snaps${NOCOLOR}"
 sudo snap refresh
 if [ -f /var/run/reboot-required ]; then
-  notify-send "System updated!"
+  notify-send -u critical "System updated!" "Reboot required"
   echo -e "${RED}reboot required${NOCOLOR}"
 else
-  notify-send "System updated!"
+  notify-send "System updated!" "No reboot required"
   echo -e "${GREEN}system updated, no reboot required${NOCOLOR}"
 fi
