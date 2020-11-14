@@ -17,9 +17,9 @@ flatpak update
 #echo -e "${RED}Updating snaps${NOCOLOR}"
 #sudo snap refresh
 if [ -f /var/run/reboot-required ]; then
-  notify-send -u critical "System updated!" "Reboot required"
+  notify-send -u critical -t 3000 "System updated!" "Reboot required"
   echo -e "${RED}reboot required${NOCOLOR}"
 else
-  notify-send "System updated!" "No reboot required"
+  notify-send -t 3000 "System updated!" "No reboot required"
   echo -e "${GREEN}system updated, no reboot required${NOCOLOR}"
 fi

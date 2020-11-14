@@ -8,4 +8,5 @@ if [ -f /var/run/reboot-required ]; then
   echo -e "${RED}reboot required${NOCOLOR}"
 else
   echo -e "${GREEN}system updated, no reboot required${NOCOLOR}"
+  notify-send -t 3000 "System updated!" "No reboot required"
 fi
