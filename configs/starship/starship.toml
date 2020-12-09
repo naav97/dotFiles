@@ -1,0 +1,27 @@
+# Use custom format
+format = """
+$directory\
+$git_status\
+$cmd_duration
+[➜](bold bright-white) """
+
+# Don't print a new line at the start of the prompt
+add_newline = false
+
+# Disable the package module, hiding it from the prompt completely
+[package]
+disabled = true
+
+[cmd_duration]
+min_time = 500
+
+[directory]
+truncation_length = 0
+style = "bold bright-blue"
+
+[git_status]
+untracked = "U"
+modified = "M"
+staged = 'S'
+renamed = "R"
+deleted = "D"
