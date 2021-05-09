@@ -115,6 +115,7 @@ set smart_artist_sort=true
 set softvol=false
 set softvol_state=0 0
 set start_view=tree
+set status_display_program=/home/naav97/.config/cmus/status_display_notify_send.sh
 set time_show_leading_zero=true
 set wrap_search=true
 bind browser backspace browser-up
