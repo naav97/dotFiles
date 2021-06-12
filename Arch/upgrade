@@ -1,0 +1,17 @@
+#!/bin/bash
+
+RED="\033[1;31m"
+GREEN="\033[1;32m"
+NOCOLOR="\033[0m"
+
+echo -e "${RED}updating repositories${NOCOLOR}"
+sudo pacman -Sy
+echo -e "${RED}upgrading system${NOCOLOR}"
+sudo pacman -Su
+echo -e "${RED}removing unnecessary software${NOCOLOR}"
+sudo pacman -Qdtq | sudo pacman -Rs -
+echo -e "${RED}Updating aur packages${NOCOLOR}"
+pacaur --aur-upgrade
+#flatpak update
+#echo -e "${RED}removing unnecessary flatpak apps${NOCOLOR}"
+#flatpak uninstall --unused
