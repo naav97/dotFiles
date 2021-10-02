@@ -11,7 +11,5 @@ sudo pacman -Su
 echo -e "${RED}removing unnecessary software${NOCOLOR}"
 sudo pacman -Qdtq | sudo pacman -Rs -
 echo -e "${RED}Updating aur packages${NOCOLOR}"
-pacaur --aur-upgrade
-#flatpak update
-#echo -e "${RED}removing unnecessary flatpak apps${NOCOLOR}"
-#flatpak uninstall --unused
+pikaur -Sya
+pikaur -Sua
