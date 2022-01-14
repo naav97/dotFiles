@@ -28,7 +28,8 @@ output * bg #252525 solid_color
 
 
 # Font
-font pango:SourceCodePro Medium 11
+#font pango:SourceCodePro Medium 11
+font pango:DejaVuSansMono Nerd Font 11
 
 # Example configuration:
 #
@@ -216,17 +217,20 @@ bar {
 
     # When the status_command prints a new line to stdout, swaybar updates.
     # The default just shows the current date and time.
-    status_command while date +'%Y-%m-%d %H:%M:%S'; do sleep 1; done
+    #status_command while :; do date +'%Y-%m-%d %H:%M:%S'; sleep 1; done
     #status_command i3status
+    #swaybar_command waybar
+    status_command exec /home/alex/.config/sway/status
 
     colors {
         statusline #ffffff
         background #352525
         inactive_workspace #352525 #352525 #ffffff
-	focused_workspace  #752525 #752525 #ffffff
+	    focused_workspace  #752525 #752525 #ffffff
     }
-    gaps 20
+    gaps 15
 }
+
 
 include /etc/sway/config.d/*
 
@@ -240,7 +244,7 @@ bindsym $mod+c exec zenity --calendar
 
 #Gaps
 gaps outer 0
-gaps inner 20
+gaps inner 15
 
 #Suspend
 bindsym $mod+Shift+s exec loginctl suspend && swaylock -c 252525 --indicator-radius 100 --indicator-thickness 8 --inside-color 252525
@@ -261,3 +265,5 @@ client.focused_inactive    #252525    #252525        #ffffff    #252525      #25
 exec --no-startup-id pipewire
 exec --no-startup-id pipewire-pulse
 exec --no-startup-id pipewire-media-session
+
+exec --no-startup-id mako

@@ -1,0 +1,8 @@
+#!/bin/bash
+while :; 
+do 
+    MEM=$(free -m | grep Mem | awk '{printf "%.2f GB ", $3/1024}')
+    DAT=$(date +'%Y-%m-%d %H:%M:%S')
+    echo -n "$MEM$DAT"
+    sleep 1
+done
