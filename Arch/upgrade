@@ -10,6 +10,7 @@ echo -e "${RED}upgrading system${NOCOLOR}"
 sudo pacman -Su
 echo -e "${RED}removing unnecessary software${NOCOLOR}"
 sudo pacman -Qdtq | sudo pacman -Rs -
+sudo pacman -Sc
 echo -e "${RED}Updating aur packages${NOCOLOR}"
 pikaur -Sya
 pikaur -Sua
