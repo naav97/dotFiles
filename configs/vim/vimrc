@@ -1,0 +1,76 @@
+set nocompatible
+
+syntax enable
+
+set path+=**
+set wildmenu
+
+"let g:ale_completion_enabled = 1
+
+call plug#begin('~/.vim/plugged')
+Plug 'preservim/nerdtree'|
+            \ Plug 'Xuyuanp/nerdtree-git-plugin'
+"Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Check Sintax
+Plug 'dense-analysis/ale'
+" Colors
+Plug 'morhetz/gruvbox'
+" Auto pair () [] {}... etc
+Plug 'tmsvg/pear-tree'
+"Plug 'Yggdroot/indentLine'
+Plug 'lepture/vim-jinja'
+Plug 'dsawardekar/wordpress.vim'
+Plug 'shawncplus/phpcomplete.vim'
+"Plug 'ludovicchabant/vim-gutentags'
+Plug 'HerringtonDarkholme/yats.vim'
+Plug 'maxmellon/vim-jsx-pretty'
+Plug 'vim-scripts/AutoComplPop'
+call plug#end()
+
+set number relativenumber
+set completeopt=menuone,noselect,noinsert
+
+autocmd VimEnter * NERDTree | wincmd p
+autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
+
+
+nnoremap <C-J> <C-W>j
+nnoremap <C-K> <C-W>k
+nnoremap <C-L> <C-W>l
+nnoremap <C-H> <C-W>h
+imap <Tab> <C-X><C-F>
+
+set background=dark
+let g:gruvbox_contrast_dark = 'soft'
+autocmd vimenter * ++nested colorscheme gruvbox
+
+set tabstop=4
+set shiftwidth=4
+set expandtab
+
+autocmd FileType javascript setlocal tabstop=2 shiftwidth=2 dictionary=~/.vim/dics/jsdic
+autocmd FileType typescript setlocal tabstop=2 shiftwidth=2 dictionary=~/.vim/dics/jsdic
+autocmd FileType sh setlocal dictionary=~/.vim/dics/bashdic
+autocmd FileType python setlocal dictionary=~/.vim/dics/pythondic
+autocmd FileType java setlocal dictionary=~/.vim/dics/javadic
+autocmd FileType c setlocal dictionary=~/.vim/dics/cdic
+autocmd FileType cpp setlocal dictionary=~/.vim/dics/cppdic
+autocmd FileType go setlocal dictionary=~/.vim/dics/godic
+autocmd FileType rust setlocal dictionary=~/.vim/dics/rustdic
+autocmd FileType sql setlocal dictionary=~/.vim/dics/sqldic
+autocmd FileType html setlocal dictionary=~/.vim/dics/htmldic
+autocmd FileType css setlocal dictionary=~/.vim/dics/cssdic
+
+"inoremap <silent><expr> <TAB>
+"      \ coc#pum#visible() ? coc#pum#next(1) :
+"      \ CheckBackspace() ? "\<Tab>" :
+"      \ coc#refresh()
+"inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
+
+"inoremap <silent><expr> <TAB> coc#pum#visible() ? coc#pum#confirm()
+"                              \: "\<TAB>"
+
+"function! CheckBackspace() abort
+"  let col = col('.') - 1
+"  return !col || getline('.')[col - 1]  =~# '\s'
+"endfunction
