@@ -1,0 +1,35 @@
+#
+# ~/.bashrc
+#
+
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
+alias l='exa --color=automatic --icons'
+alias ll='exa -l --color=automatic --icons'
+alias la='exa -a --color=automatic --icons'
+alias brave-w='brave --enable-features=UseOzonePlatform --ozone-platform=wayland'
+# PS1='[\u@\h \W]\$ '
+
+export PATH="$PATH:$HOME/.local/bin/"
+export PATH="$PATH:$HOME/programs/Telegram/"
+export PATH="$PATH:$HOME/programs/flutter/bin"
+export PATH="$PATH:$HOME/programs/Postman/"
+export PATH="$PATH:/usr/lib/jvm/java-17-openjdk/bin/"
+export PATH="$PATH:$HOME/programs/sonar-scanner-4.7.0.2747-linux/bin"
+export PATH="$PATH:$HOME/programs/GAMS/gams41.5_linux_x64_64_sfx/"
+export PATH="$PATH:$HOME/programs/GAMS/gams41.5_linux_x64_64_sfx/studio/"
+export PATH="$PATH:$HOME/programs/ugene-45.1/"
+export PATH="$PATH:/opt/chimerax/bin/ChimeraX"
+export PATH="$PATH:$HOME/.cargo/bin/"
+export PATH="$PATH:/home/alex/programs/"
+export PATH="$PATH:$HOME/programs/MATLAB/bin/"
+export MOZ_ENABLE_WAYLAND=1
+
+eval "$(starship init bash)"
+
+#export NODE_OPTIONS=--openssl-legacy-provider
+export QT_QPA_PLATFORM=xcb
+export _JAVA_AWT_WM_NONREPARENTING=1
+#export QT_STYLE_OVERRIDE=kvantum
+. "$HOME/.cargo/env"
