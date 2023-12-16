@@ -14,5 +14,5 @@ sudo pacman -Sc
 echo -e "${RED}Updating aur packages${NOCOLOR}"
 yay -Sya
 yay -Sua
-echo -e "${RED}Updating Flatpaks${NOCOLOR}"
-flatpak update
+#echo -e "${RED}Updating Flatpaks${NOCOLOR}"
+#flatpak update
