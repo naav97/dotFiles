@@ -5,9 +5,9 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-alias l='exa --color=automatic --icons'
-alias ll='exa -l --color=automatic --icons'
-alias la='exa -a --color=automatic --icons'
+alias l='ls --color=always'
+alias ll='ls -l --color=always'
+alias la='ls -a --color=always'
 alias brave-w='brave --enable-features=UseOzonePlatform --ozone-platform=wayland'
 # PS1='[\u@\h \W]\$ '
 
@@ -16,20 +16,33 @@ export PATH="$PATH:$HOME/programs/Telegram/"
 export PATH="$PATH:$HOME/programs/flutter/bin"
 export PATH="$PATH:$HOME/programs/Postman/"
 export PATH="$PATH:/usr/lib/jvm/java-17-openjdk/bin/"
-export PATH="$PATH:$HOME/programs/sonar-scanner-4.7.0.2747-linux/bin"
-export PATH="$PATH:$HOME/programs/GAMS/gams41.5_linux_x64_64_sfx/"
-export PATH="$PATH:$HOME/programs/GAMS/gams41.5_linux_x64_64_sfx/studio/"
-export PATH="$PATH:$HOME/programs/ugene-45.1/"
-export PATH="$PATH:/opt/chimerax/bin/ChimeraX"
+export PATH="$PATH:$HOME/programs/sonar-scanner-5.0.1.3006-linux/bin"
 export PATH="$PATH:$HOME/.cargo/bin/"
 export PATH="$PATH:/home/alex/programs/"
-export PATH="$PATH:$HOME/programs/MATLAB/bin/"
-export MOZ_ENABLE_WAYLAND=1
+export PATH="$PATH:$HOME/.config/composer/vendor/bin/"
+export PATH="$PATH:$HOME/.npm/bin/"
+export PATH="$PATH:$HOME/programs/css3FontConverter/"
 
+#echo "start starship"
 eval "$(starship init bash)"
+#echo "starship done"
+
+# Wayland stuff
+export MOZ_ENABLE_WAYLAND=1
+export QT_QPA_PLATFORM=wayland
+#export QT_QPA_PLATFORM=xcb
+export _JAVA_AWT_WM_NONREPARENTING=1
 
 #export NODE_OPTIONS=--openssl-legacy-provider
-export QT_QPA_PLATFORM=xcb
-export _JAVA_AWT_WM_NONREPARENTING=1
-#export QT_STYLE_OVERRIDE=kvantum
+#echo "start cargo"
 . "$HOME/.cargo/env"
+#echo "cargo done"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/alex/programs/google-cloud-sdk/path.bash.inc' ]; then . '/home/alex/programs/google-cloud-sdk/path.bash.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/alex/programs/google-cloud-sdk/completion.bash.inc' ]; then . '/home/alex/programs/google-cloud-sdk/completion.bash.inc'; fi
+
+# Nix
+#export NIX_REMOTE=daemon

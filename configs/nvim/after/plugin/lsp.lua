@@ -8,6 +8,7 @@ end)
 
 -- (Optional) Configure lua language server for neovim
 require('lspconfig').rust_analyzer.setup({})
+require'lspconfig'.svelte.setup{}
 
 lsp.setup()
 
